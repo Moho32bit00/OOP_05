@@ -10,13 +10,14 @@ namespace Session05_oop_assignment
         private string trackingStatus;
         public string TrackingStatus => trackingStatus;
 
-        public void updateTrackingstatus ( )
+        public void updateTrackingstatus(string newStatus)
         {
-            if (trackingStatus == "Ready")
-            {
-                trackingStatus = "not ready";
-            }
-            else {  trackingStatus = "Ready"; }
+            OnTrackingStatusChanged(newStatus);
+        }
+
+        public partial void OnTrackingStatusChanged(string newStatus)
+        {
+            Console.WriteLine($"Tracking status changed to: {newStatus}");
         }
 
         public string  Gettrackingstatus()

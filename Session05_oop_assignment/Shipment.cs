@@ -147,12 +147,7 @@ namespace Session05_oop_assignment
         }
         #endregion
 
-        #region 8 Extension Methods
-
-
-
-
-        #endregion 
+        public partial void OnTrackingStatusChanged(string newStatus);
 
     }
 
