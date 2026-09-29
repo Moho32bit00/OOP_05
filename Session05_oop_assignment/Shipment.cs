@@ -145,9 +145,14 @@ namespace Session05_oop_assignment
             Console.WriteLine("number of created objects : ");
             return TotalShipmentsCreated;
         }
+        #endregion
+
+        #region 8 Extension Methods
+
+
+
+
         #endregion 
-
-
 
     }
 
