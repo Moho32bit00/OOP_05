@@ -64,6 +64,11 @@ namespace Session05_oop_assignment
         //============
         //constructors
 
+        static Shipment()
+        {
+            TotalShipmentsCreated = 0;
+            Console.WriteLine("Shipment System Initialized");
+        }
         public Shipment() { TotalShipmentsCreated++;  }
         public Shipment(string trackingCode)
         {
