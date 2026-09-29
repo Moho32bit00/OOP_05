@@ -46,19 +46,78 @@
             c) it is a method that have no implementation and it can be implemented in any other part .
             d) if it does have access modifier you must implemented on another part , if it does not have access modifier it become optional method u can implement it if u want .
             */
-            #endregion 
+            #endregion
             #endregion
 
 
 
+            #region 11 Main() Checklist
+                // 1. Create and use DeliveryUtilities
+                DeliveryUtilities.PrintSystemTitle();
+                DeliveryUtilities.PrintSeparator();
 
+                // 2. Add and demonstrate the static shipment counter & Static Constructor check
+                Console.WriteLine($"[Initial Counter Check]");
+                Console.WriteLine($"Total Shipments: {Shipment.GetTotalShipmentsCreated()}");
+                DeliveryUtilities.PrintSeparator();
 
+                DeliveryAddress originalAddress = new DeliveryAddress("Cairo", "El-Galaa St.", 12);
+                Shipment s1 = new Shipment("SH-101", "Electronics", 2.5m, 100m, originalAddress, "Pending");
 
+                // 3. Demonstrate reference assignment between two shipment variables
+                // 4. Demonstrate that reference assignment does not create a new object
+                Console.WriteLine("[1. Reference Assignment Test]");
+                Shipment s2 = s1; // Both s1 and s2 point to the exact same memory location
 
+                Console.WriteLine($"s1 Tracking Code: {s1.TrackingCode}");
+                Console.WriteLine($"s2 Tracking Code: {s2.TrackingCode}");
+                Console.WriteLine($"Are s1 and s2 referencing the same instance? {object.ReferenceEquals(s1, s2)}");
+                DeliveryUtilities.PrintSeparator();
 
+                // 5. Create a Shallow Copy using MemberwiseClone()
+                // 6. Demonstrate that the shallow copy shares the same DeliveryAddress
+                Console.WriteLine("[2. Shallow Copy Test]");
+                Shipment shallowCopy = s1.ShallowCopy();
 
+                Console.WriteLine($"s1 Address City before change: {s1.Destination.City}");
+                shallowCopy.Destination.City = "Alexandria"; 
+                Console.WriteLine($"shallowCopy Address City: {shallowCopy.Destination.City}");
+                Console.WriteLine($"s1 Address City after change (Shared reference!): {s1.Destination.City}");
+                DeliveryUtilities.PrintSeparator();
 
+                s1.Destination.City = "Cairo";
 
+                // 7. Create a Deep Copy
+                // 8. Demonstrate that the deep copy has an independent DeliveryAddress
+                Console.WriteLine("[3. Deep Copy Test]");
+                Shipment deepCopy = s1.DeepCopy();
+
+                deepCopy.Destination.City = "Giza"; 
+                Console.WriteLine($"s1 Address City: {s1.Destination.City}");
+                Console.WriteLine($"deepCopy Address City (Independent): {deepCopy.Destination.City}");
+                DeliveryUtilities.PrintSeparator();
+
+                // 9. Demonstrate Extension Methods (ShipmentExtensions)
+                Console.WriteLine("[4. Extension Methods Test]");
+                Console.WriteLine($"Summary: {s1.GetSummary()}");
+                Console.WriteLine($"Is Delivered? {s1.IsDelivered()}");
+
+                s1.updateTrackingstatus("Delivered");
+                Console.WriteLine($"Updated Summary: {s1.GetSummary()}");
+                Console.WriteLine($"Is Delivered now? {s1.IsDelivered()}");
+                DeliveryUtilities.PrintSeparator();
+
+                // 10. Implement and demonstrate Partial Method
+                Console.WriteLine("[5. Partial Method Test]");
+                s1.updateTrackingstatus("In Transit"); 
+                DeliveryUtilities.PrintSeparator();
+
+                // 11. Final call to GetTotalShipmentsCreated()
+                Console.WriteLine($"[Final Counter Check]");
+                Console.WriteLine($"Total Shipments Created: {Shipment.GetTotalShipmentsCreated()}");
+                DeliveryUtilities.PrintSeparator();
         }
+            #endregion
+
     }
 }
