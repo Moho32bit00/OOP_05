@@ -64,11 +64,13 @@ namespace Session05_oop_assignment
         //============
         //constructors
 
+        #region 5 Static Constructor
         static Shipment()
         {
             TotalShipmentsCreated = 0;
             Console.WriteLine("Shipment System Initialized");
         }
+        #endregion 
         public Shipment() { TotalShipmentsCreated++;  }
         public Shipment(string trackingCode)
         {
@@ -142,6 +144,15 @@ namespace Session05_oop_assignment
             return s;
         }
         #endregion
+
+
+        #region  6 Static Method
+        public static int GetTotalShipmentsCreated()
+        {
+            Console.WriteLine("number of created objects : ");
+            return TotalShipmentsCreated;
+        }
+        #endregion 
 
     }
 
