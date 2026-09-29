@@ -11,6 +11,9 @@ namespace Session05_oop_assignment
         private decimal weight;
         protected decimal deliveryFee;
         private string trackingStatus;
+        #region 4 Static Field 
+        private static int TotalShipmentsCreated;
+        #endregion 
         public string TrackingCode => trackingCode;
 
         public string Description
@@ -57,10 +60,11 @@ namespace Session05_oop_assignment
 
         public  decimal EstimatedCost { get; }
 
-        public DeliveryAddress Destination { get; set; } 
+        public DeliveryAddress Destination { get; set; }
         //============
         //constructors
-        public Shipment() { }
+
+        public Shipment() { TotalShipmentsCreated++;  }
         public Shipment(string trackingCode)
         {
             this.trackingCode = trackingCode;
@@ -68,6 +72,7 @@ namespace Session05_oop_assignment
             Weight = 1;
             DeliveryFee = 50;
             Destination = new DeliveryAddress("Unknown", "Unknown", 0);
+            TotalShipmentsCreated++;
         }
         public Shipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, string trackingStatus)
         {
@@ -77,6 +82,7 @@ namespace Session05_oop_assignment
             this.deliveryFee = deliveryFee;
             Destination = destination;
             this.trackingStatus = trackingStatus;
+            TotalShipmentsCreated++;
         }
         //==========
 
