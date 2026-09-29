@@ -39,6 +39,14 @@
             d) no it can not access private members .
             */
             #endregion
+            #region Q5 Partial Classes and Partial Methods
+            /*
+            a) partial class is dividing one class into multiple files all of them are combined by the compiler .
+            b) to organize large class across multiple files .
+            c) it is a method that have no implementation and it can be implemented in any other part .
+            d) if it does have access modifier you must implemented on another part , if it does not have access modifier it become optional method u can implement it if u want .
+            */
+            #endregion 
             #endregion
         }
     }
