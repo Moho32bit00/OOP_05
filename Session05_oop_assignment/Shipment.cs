@@ -123,6 +123,15 @@ namespace Session05_oop_assignment
         }
         #endregion
 
+        #region 3 Deep Copy 
+        public Shipment DeepCopy()
+        {
+            Shipment s = (Shipment)this.MemberwiseClone();
+            s.Destination = new DeliveryAddress(this.Destination.City, this.Destination.Street, this.Destination.BuildingNumber);
+            return s;
+        }
+        #endregion
+
     }
 
 
