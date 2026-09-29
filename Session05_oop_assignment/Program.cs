@@ -23,6 +23,14 @@
             affecting the original object address .
             */
             #endregion
+            #region Q3 Static Members
+            /*
+            a) static field is a feild belong to the class itself , the instance field is created everytime a new object is created  while the static is one shared copy stored in the memory for the whole program .
+            b) it is a method that belong to the class u can not call it using object u must use the class to call it , no it can not .
+            c)  it is a constructor that run before anything to perform a certain act only once , it does excecute first thing on the program only one time 
+            d) is a class that only have  static methods and static fields , no u can not create object using it .
+            */
+            #endregion
             #endregion
         }
     }
