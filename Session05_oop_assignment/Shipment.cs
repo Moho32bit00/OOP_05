@@ -108,12 +108,21 @@ namespace Session05_oop_assignment
         }
 
 
-        #region Q1 Object Copying
+        #region 1 Object Copying
         public Shipment CopyShipment()
         {
             return new Shipment(this.trackingCode,this.description, this.weight, this.deliveryFee,this.Destination,this.trackingStatus);
         }
-        #endregion 
+        #endregion
+
+
+        #region  2 Shallow Copy
+        public Shipment ShallowCopy()
+        {
+            return (Shipment)this.MemberwiseClone();
+        }
+        #endregion
+
     }
 
 
