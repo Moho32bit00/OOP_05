@@ -31,6 +31,14 @@
             d) is a class that only have  static methods and static fields , no u can not create object using it .
             */
             #endregion
+            #region Q4 Extension Methods
+            /*
+            a) it is a static method used to extend other class Extension without changing anything in that class .
+            b) this
+            c) in another static class it perfered to be a helper class 
+            d) no it can not access private members .
+            */
+            #endregion
             #endregion
         }
     }
