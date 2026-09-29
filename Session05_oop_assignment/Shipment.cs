@@ -4,13 +4,13 @@ using System.Text;
 
 namespace Session05_oop_assignment
 {
-    public   class Shipment
+    public  partial class Shipment
     {
         protected string trackingCode;
         private string description;
         private decimal weight;
         protected decimal deliveryFee;
-        private string trackingStatus;
+        
         #region 4 Static Field 
         private static int TotalShipmentsCreated;
         #endregion 
@@ -44,7 +44,7 @@ namespace Session05_oop_assignment
             }
         }
 
-        public string TrackingStatus => trackingStatus;
+        
         public decimal DeliveryFee
         {
             get { return deliveryFee; }
