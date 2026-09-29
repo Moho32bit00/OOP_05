@@ -64,13 +64,6 @@ namespace Session05_oop_assignment
         //============
         //constructors
 
-        #region 5 Static Constructor
-        static Shipment()
-        {
-            TotalShipmentsCreated = 0;
-            Console.WriteLine("Shipment System Initialized");
-        }
-        #endregion 
         public Shipment() { TotalShipmentsCreated++;  }
         public Shipment(string trackingCode)
         {
